@@ -1,0 +1,38 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+    <br><p>Select which girl(s) to associate with this account.<p>
+    <form method="post">
+        <table>
+            <tr align=right>
+                <td valign=top>
+                    {{ form.hidden_tag() }}
+                    {% for subfield in form.example %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                    <!-- {{ form.example }} -->
+                    <!-- {{ form.girls }} -->
+                </td>
+                <!-- <td width="20"></td>
+                <td valign=top>
+                    <b>Selected</b><br>
+                    {% if selected %}
+                    {% for s in selected %}
+                        {{ s }}<br>
+                    {% endfor %}
+                    {% endif %}
+                </td> -->
+            </tr>
+
+        </table>
+        <input type="submit">
+    </form>
+
+{% endblock %}
+

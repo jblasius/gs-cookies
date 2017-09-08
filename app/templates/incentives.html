@@ -1,0 +1,36 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+<h2>Girl Name: {{ info[0] }}, Current Total = {{ info[1] }}</h2>
+<div class="row">
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Incentive Level</th>
+                <th>Picture</th>
+                <th>Incentive Name</th>
+                <th>Earned?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reward in rewards %}
+            {% if reward[3]=='Yes' %}
+            <tr class="success">
+            {% else %}
+            <tr class="danger">
+            {% endif %}
+                <td class="col-md-4">{{ reward[0] }}</td>
+                <td class="col-md-2"><img src="{{ reward[2] }}"></td>
+                <td class="col-md-5">{{ reward[1] }}</td>
+                <td class="col-md-1">{{ reward[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

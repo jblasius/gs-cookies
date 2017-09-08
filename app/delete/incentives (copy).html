@@ -1,0 +1,24 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+    <table>
+    <tr><strong>
+        <td>Incentive Level</td>
+        <td>Picture</td>
+        <td>Incentive Name</td>
+        <td>Earned?</td></strong>
+    </tr>
+    {% for reward in rewards %}
+    <tr>
+        <td>{{ reward[0] }}</td>
+        <td><img src="{{ reward[2] }}"></td>
+        <td>{{ reward[1] }}</td>
+        <td>{{ reward[3] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

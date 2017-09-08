@@ -1,0 +1,30 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+    Select which color(s) to associate with this account.<br>
+    <form method="post">
+        <table>
+            <tr>
+                <td valign=top>
+                    {{ form.hidden_tag() }}
+                    {{ form.colors }}
+                </td>
+                <td width="20"></td>
+                <td valign=top>
+                    <b>Selected</b><br>
+                    {% if selected %}
+                    {% for s in selected %}
+                        {{ s }}<br>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+
+        </table>
+        <input type="submit">
+    </form>
+
+{% endblock %}

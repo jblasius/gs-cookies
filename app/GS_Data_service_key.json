@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gs-cookies",
+  "private_key_id": "1ee54a82bb9ee9f596c8f75d498de05e3ccd2522",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC6OUgJLm3Mutdg\nwGx7WpRmwHSrfufaJYwqfiVoAojBY3GTobwM1/IxL7X/g8F0oA2b3U24vFK6h7Y4\nlfo5GoAwy/xRId2IXZBAfsgBxPLndO44vMjb0LalCE4JKAOPzQ3ibkab/oI/6iWG\nLJpnDJLzU7JZ5IJlLiD3LeIxMO77b4JZX3Zq0ZC9i9aZ8V7k8XnoHwK0UshzrTSJ\n0xbQXunHuP+BTLFR2UGWXlBGKiCG5J6iQioah18AapYFCUEPPNH5RSsX8F/PhWjp\naeG/xxEDIZbGQ3QnlISn7QB4OF5r6JuIt9rCWdVzsEUxvPSA0w6GguSvmMUZjJss\nZRA40wdHAgMBAAECggEBAI9p478mYWrkjU+2gRTyag1Ds9YK8rU+a1aiNV6HbRg5\n5FMEoFTnzV3x12CC8G5HgJODeAKIDdIXB89GOSDW9tgdkCBPS1Nkct4ohRFPwp1b\noMZTJQCcGLy5y5cjmLKbAVFbCcfC1j4wrVtKaFJqDZWU5Gp0H7OaNcsGLAckHzfE\nlTmdJ0Dgqi/sgevXyukx3W0XBnfA4ThtLeXTWXlvw4PWAGscDW5omrYE2+6S4wUs\n6uw/W83ay7S0imDvFq81UrG2Oxl1swOEKG3R0V/rFNC8bqRDQduBWmM0Qk4ILVNY\nzzvDexH8j79fpn7f3ugWv85r+F6y+4AdyZQh1eiPEhECgYEA2rL64ni9ywtVHh2E\nkFUxuvoEgNtFkt4gXLiH0BH/sCTgHTDuQuATJjDyLRVpSm+2MvS9dhQwnja0gOh1\nD2f2iCwYCQWCzrctIRMY0qWEc3sLVJoSQiuHv/MqML7Q69BuK7BsLFwfkxzpMLk/\nr0QpXRgk6d1Nx5Yt8PH2kDhY0YkCgYEA2fxVq9xovJapupwJW2wVEUsDoPESZfi6\n9ozT9gPpMJREW6apAB3B5stKPCimFmQJMfHpJzgHQ3NqlQFYAP0xXvZsiWuHEpPf\ncLl1o4wo4Ayy6X3R5dTbE45V7GqTBCg3aiqLCggb/U5v2T1cUT48q9xnrIDD7mhX\n8iCbW8d17k8CgYAcEw/L1M4ga5MAq69hy933b7L2S6+xu9wRqwqcNkNJfGJcvPRJ\nF3S92VitWutKR+7uuaY8qzjWhpVDWxPz51epgWeQeOmi2bbsYQQ1vlOzc18v/BtN\n7UKe7HtFCKnPK9GIwDwSsbzH6NUykQVQ3YIl1jye3O7oKSo6nQUW3HTiaQKBgQCJ\n5ux70PAhfl7ZwyTYRUP+sKoXAutUv0nn96eQF2FKbkHgiUqY3Dpyu2C3Ni/8MkTu\n589MFFHkBfwDT9pQpdy56sM3HGNTCWFteqZFVMH3G5GDzSkgcMw3TvBko/dlxdto\nuolDS2YJlbmEgSEJ9ImFX+XmZ3+ML06TyrT+Fu0wWQKBgQDGXzg5QFT+pFTcU0Ad\n6Qa0J/biCt2uWVb/XkLI3hOp2TTjQS6ObthP2fNmMrPznFYIsZ+RRrLt2M8R4ZOc\nqzKqayAieBrReCVtwv/ucBXXZ37V719MeBYlWx1AqRRc9vv737LkBaqGhfH7AzsU\nHMtcBdd0N1vk/tdX8rNY3pKqIg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gs-data@gs-cookies.iam.gserviceaccount.com",
+  "client_id": "100786547954610185012",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gs-data%40gs-cookies.iam.gserviceaccount.com"
+}
