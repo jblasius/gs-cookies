@@ -1,0 +1,23 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+    <h2>Select which girl to associate with this account.</h2>
+    <form method="post">
+        <table>
+            {{ form.hidden_tag() }}
+            {% for subfield in form.girl_choice %}
+            <tr>
+                <td class="col-md-1">
+                <td class="col-md-1">{{ subfield }}</td>
+                <td class="col-md-10">{{ subfield.label }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="submit">
+    </form>
+
+{% endblock %}
+

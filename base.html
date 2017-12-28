@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap-social.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/font-awesome.css') }}">
+
+    {% if title %}
+    <title>{{ title }} - Girl Scout Cookies</title>
+    {% else %}
+    <title>Girl Scout Cookies</title>
+    {% endif %}
+  </head>
+  <body>
+    <div class="container-fluid">
+  	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-pills">
+				{% if title=='Home' %}
+				<li class="active">
+					<a href="/">Home</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="/">Home</a>
+				</li>
+				{% endif %}
+				{% if current_user.is_authenticated %}
+				{% if title=='Goal Status' %}
+				<li class="active">
+					<a href="goal">Goal Status</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="goal">Goal Status</a>
+				</li>
+				{% endif %}
+				{% if title=='Financials' %}
+				<li class="active">
+					<a href="/financials">Financials</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="financials">Financials</a>
+				</li>
+				{% endif %}
+				{% if title=='Incentives' %}
+				<li class="active">
+					<a href="/incentives">Incentives</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="/incentives">Incentives</a>
+				</li>
+				{% endif %}
+				{% if title=='Downloads' %}
+				<li class="active">
+					<a href="/downloads">Downloads</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="/downloads">Downloads</a>
+				</li>
+				{% endif %}
+				{% if title=='My Account' %}
+				<li class="active">
+					<a href="/profile">My Account</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="/profile">My Account</a>
+				</li>
+				{% endif %}
+				{% if title=='Logout' %}
+				<li class="active">
+					<a href="logout">Logout</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="logout">Logout</a>
+				</li>
+				{% endif %}
+				{% endif %}
+				{% if not current_user.is_authenticated %}
+				{% if title=='Login' %}
+				<li class="active">
+					<a href="login">Login</a>
+				</li>
+				{% else %}
+				<li>
+					<a href="login">Login</a>
+				</li>
+				{% endif %}
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</div>
+
+    <script src="{{ url_for('.static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('.static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('.static', filename='js/scripts.js') }}"></script>
+
+	<div>{% block content %}{% endblock %}</div>
+
+</body>
+</html>

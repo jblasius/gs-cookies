@@ -1,0 +1,189 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+
+<h2><center>Girl Name: {{ girl_info['name'] }}, Troop {{ girl_info['troop'] }}<br>
+As of: {{ info['todays_date'] }}, Week Number {{ info['week_num'] }}</center></h2>
+
+<div class="container-fluid">
+    <div class="row" align="center">
+        <h3>Individual Progress</h3>
+        <div class="col-sm-8">
+            Total Boxes Sold: {{ girl_total['sold'] }}<br>
+            Goal: {{ girl_info['goal'] }}<br>
+            Percent to Goal: {{ percent['goal'] }}
+        </div>
+        <div class="col-sm-4">
+            Gift of Caring Boxes Sold: {{ girl_goc['sold'] }}<br>
+            Goal: {{ girl_info['goal_goc'] }}<br>
+            Percent to Goal: {{ percent['goal_goc'] }}
+        </div>
+    </div>
+    <div class="row" align="center">
+        <div class="col-sm-4" id="chart_div1">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['gauge']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['{{ girl_info.name }}', {{ girl_total.sold }}],
+                ]);
+
+                var options = {
+                    width: 250, height: 250,
+                    max: {{ chart1_options.max }},
+                    greenFrom: {{ chart1_options.greenFrom }},
+                    greenTo: {{ chart1_options.greenTo }},
+                    redFrom: {{ chart1_options.redFrom }},
+                    redTo: {{ chart1_options.redTo }},
+                    yellowFrom: {{ chart1_options.yellowFrom }},
+                    yellowTo: {{ chart1_options.yellowTo }},
+                    yellowColor: '#FFFF00'
+                    // minorTicks: 5
+                };
+
+                var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+
+                chart1.draw(data, options);
+
+                }
+            </script>
+        </div>
+        <div class="col-sm-4" id="chart_div2">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Week', 'Personal', 'Booth'],
+                        ['1',    {{ girl_total.week1_personal }}, {{ girl_total.week1_booth }}],
+                        ['2',    {{ girl_total.week2_personal_cumul }}, {{ girl_total.week2_booth_cumul }}],
+                        ['3',    {{ girl_total.week3_personal_cumul }}, {{ girl_total.week3_booth_cumul }}],
+                        ['4',    {{ girl_total.week4_personal_cumul }}, {{ girl_total.week4_booth_cumul }}],
+                        ['5',    {{ girl_total.week5_personal_cumul }}, {{ girl_total.week5_booth_cumul }}],
+                        ['6',    {{ girl_total.week6_personal_cumul }}, {{ girl_total.week6_booth_cumul }}],
+                        ['7',    {{ girl_total.week7_personal_cumul }}, {{ girl_total.week7_booth_cumul }}],
+                        ['8',    {{ girl_total.week8_personal_cumul }}, {{ girl_total.week8_booth_cumul }}],
+                        ['9',    {{ girl_total.week9_personal_cumul }}, {{ girl_total.week9_booth_cumul }}]
+                    ]);
+
+                    var options = {
+                        width: 300, height: 300,
+                        title: 'How You Sold (cumulative)',
+                        hAxis: {title: 'Week',  titleTextStyle: {color: '#333'}},
+                        isStacked: true,
+                        vAxis: {minValue: 0}
+                    };
+
+                    var chart2 = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+                    chart2.draw(data, options);
+                }
+            </script>
+        </div>
+        <div class="col-sm-4" id="chart_div3">
+            <img src="{{ goc_pic['girl'] }}" style="height:250px">
+        </div>
+    </div>
+    <br>
+    <div class="row" align="center">
+        <div class="col-sm-8">
+            {{ msg['goal'] }}<br>
+        </div>
+        <div class="col-sm-4">
+            {{ msg['goc'] }}<br>
+        </div>
+    <div class="row" align="center">
+        <p><h3>Troop Progress</h3></p>
+        <div class="col-sm-8">
+            Total Boxes Sold: {{ troop_total['sold'] }}<br>
+            Goal: {{ girl_info['troop_goal'] }}<br>
+            Percent to Goal: {{ percent['troop_goal'] }}
+        </div>
+        <div class="col-sm-4">
+            Gift of Caring Boxes Sold: {{ troop_goc['sold'] }}<br>
+            Goal: {{ girl_info['troop_goal_goc'] }}<br>
+            Percent to Goal: {{ percent['troop_goal_goc'] }}
+        </div>
+    </div>
+    <div class="row" align="center">
+        <div class="col-sm-4" id="chart_div4">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['gauge']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['{{ girl_info.troop }}', {{ troop_total.sold }}],
+                ]);
+
+                var options = {
+                    width: 250, height: 250,
+                    max: {{ chart3_options.max }},
+                    greenFrom: {{ chart3_options.greenFrom }},
+                    greenTo: {{ chart3_options.greenTo }},
+                    redFrom: {{ chart3_options.redFrom }},
+                    redTo: {{ chart3_options.redTo }},
+                    yellowFrom: {{ chart3_options.yellowFrom }},
+                    yellowTo: {{ chart3_options.yellowTo }},
+                    yellowColor: '#FFFF00'
+                    // minorTicks: 5
+                };
+
+                var chart4 = new google.visualization.Gauge(document.getElementById('chart_div4'));
+
+                chart4.draw(data, options);
+
+                }
+            </script>
+        </div>
+        <div class="col-sm-4" id="chart_div5">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Week', 'Personal', 'Booth'],
+                        ['1',    {{ troop_total.week1_personal }}, {{ troop_total.week1_booth }}],
+                        ['2',    {{ troop_total.week2_personal_cumul }}, {{ troop_total.week2_booth_cumul }}],
+                        ['3',    {{ troop_total.week3_personal_cumul }}, {{ troop_total.week3_booth_cumul }}],
+                        ['4',    {{ troop_total.week4_personal_cumul }}, {{ troop_total.week4_booth_cumul }}],
+                        ['5',    {{ troop_total.week5_personal_cumul }}, {{ troop_total.week5_booth_cumul }}],
+                        ['6',    {{ troop_total.week6_personal_cumul }}, {{ troop_total.week6_booth_cumul }}],
+                        ['7',    {{ troop_total.week7_personal_cumul }}, {{ troop_total.week7_booth_cumul }}],
+                        ['8',    {{ troop_total.week8_personal_cumul }}, {{ troop_total.week8_booth_cumul }}],
+                        ['9',    {{ troop_total.week9_personal_cumul }}, {{ troop_total.week9_booth_cumul }}]
+                    ]);
+
+                    var options = {
+                        width: 300, height: 300,
+                        title: 'How Your Troop Sold (cumulative)',
+                        hAxis: {title: 'Week',  titleTextStyle: {color: '#333'}},
+                        isStacked: true,
+                        vAxis: {minValue: 0}
+                    };
+
+                    var chart5 = new google.visualization.AreaChart(document.getElementById('chart_div5'));
+                    chart5.draw(data, options);
+                }
+            </script>
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ goc_pic['troop'] }}" style="height:250px">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

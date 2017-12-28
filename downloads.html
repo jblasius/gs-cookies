@@ -1,0 +1,8 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+    <h2>GS Cookies Downloads</h2>
+    <iframe src="https://drive.google.com/embeddedfolderview?id={{ folder_url }}#list" height="400" width="95%"></iframe>
+{% endblock %}

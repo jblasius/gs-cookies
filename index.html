@@ -1,0 +1,12 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+    <h2>Welcome to the GS Cookies website</h2>
+    <p>This site provides information for the Girl Scout Cookie sale for Troops 730 and 2196.</p>
+    {% if current_user.is_authenticated %}
+        <p>Here is this week's Cookie News:</p>
+        <iframe src={{ doc_url }} height="400" width="95%"></iframe>
+    {% endif %}
+{% endblock %}
