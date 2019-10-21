@@ -9,7 +9,7 @@ configobj==5.0.6
 configparser==3.5.0
 deja-dup-caja==0.0.4
 duplicity==0.7.6
-ecdsa==0.13
+ecdsa==0.13.3
 enum34==1.1.6
 folder-color-caja==0.0.79
 folder-color-common==0.0.79
